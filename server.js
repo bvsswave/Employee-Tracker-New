@@ -1,17 +1,31 @@
-// const connection = require('./config/connection');
-// const inquirer = require('inquirer');
-// const cTable = require('console.table');
-// const chalk = require('chalk');
-// const figlet = require('figlet');
-// const validate = require('./javascript/validate');
-// const mongoose = require("mongoose");
 
 const inputCheck = require('.utils/inputCheck');
 const db = require('./db/connection');
 const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3306;
 
-const PORT = process.env.PORT || 3001;
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/employee-tracker";
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+// API
+
+app.get('/api/department', (req, res) => {
+    const sql = `SELECT * FROM department`;
+
+    db.query(sql, (err, row) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'Successful!',
+            data: row
+        });
+    });
+});
+
+// Department
 
 connection.connect((error) => {
     if (error) throw error;
