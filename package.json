@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/bvsswave/Employee-Tracker-New#readme",
   "dependencies": {
+    "console.table": "^0.10.0",
     "express": "^4.17.3",
     "install": "^0.13.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "npm": "^8.5.3"
   }
 }
