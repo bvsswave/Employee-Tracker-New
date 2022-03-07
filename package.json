@@ -1,0 +1,24 @@
+{
+  "name": "employee-tracker-new",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bvsswave/Employee-Tracker-New.git"
+  },
+  "author": "Tanner Shahan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bvsswave/Employee-Tracker-New/issues"
+  },
+  "homepage": "https://github.com/bvsswave/Employee-Tracker-New#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "install": "^0.13.0",
+    "npm": "^8.5.3"
+  }
+}
