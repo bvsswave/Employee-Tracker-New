@@ -1,31 +1,30 @@
 {
-  "name": "employee-tracker-new",
+  "name": "employee-tracker",
   "version": "1.0.0",
-  "description": "## Description",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js",
+      "seed": "node ./db/seeds.sql"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bvsswave/Employee-Tracker-New.git"
+      "type": "git",
+      "url": "git+https://github.com/bvsswave/Employee-Tracker-New.git"
   },
-  "author": "Tanner Shahan",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bvsswave/Employee-Tracker-New/issues"
+      "url": "https://github.com/bvsswave/Employee-Tracker-New/issues"
   },
-  "homepage": "https://github.com/bvsswave/Employee-Tracker-New#readme",
   "dependencies": {
-    "chalk": "^5.0.0",
-    "console.table": "^0.10.0",
-    "ctable": "^0.0.3",
-    "express": "^4.17.3",
-    "figlet": "^1.5.2",
-    "inquirer": "^8.2.0",
-    "install": "^0.13.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.3.3",
-    "npm": "^8.5.3"
+      "console.table": "^0.10.0",
+      "express": "^4.17.3",
+      "inquirer": "^8.2.0",
+      "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+      "jest": "^27.5.1"
   }
 }

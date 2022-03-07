@@ -1,9 +1,13 @@
 const connection = require('./config/connection');
+const inquirer = require('inquirer');
+const cTable = require('console.table');
+const chalk = require('chalk');
 const figlet = require('figlet');
 const validate = require('./javascript/validate');
-const chalk = require('chalk');
-const inquirer = require('inquirer');
-const validate = require('./javascript/validate');
+const mongoose = require("mongoose");
+
+const PORT = process.env.PORT || 3001;
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/employee-tracker";
 
 connection.connect((error) => {
     if (error) throw error;
@@ -589,3 +593,4 @@ connection.connect((error) => {
           });
       });
   };
+
