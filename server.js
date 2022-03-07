@@ -1,10 +1,14 @@
-const connection = require('./config/connection');
-const inquirer = require('inquirer');
-const cTable = require('console.table');
-const chalk = require('chalk');
-const figlet = require('figlet');
-const validate = require('./javascript/validate');
-const mongoose = require("mongoose");
+// const connection = require('./config/connection');
+// const inquirer = require('inquirer');
+// const cTable = require('console.table');
+// const chalk = require('chalk');
+// const figlet = require('figlet');
+// const validate = require('./javascript/validate');
+// const mongoose = require("mongoose");
+
+const inputCheck = require('.utils/inputCheck');
+const db = require('./db/connection');
+const express = require('express');
 
 const PORT = process.env.PORT || 3001;
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/employee-tracker";
