@@ -205,3 +205,50 @@ async function startQuestions() {
                 }
             }
         ])
+
+        if (updatedEmployeeRole) {
+            updatedRole.push(updatedEmployeeRole);
+            
+        }
+        
+        updateEmployeeRole();
+
+    }
+    if (question.trackerAction === 'Quit') {
+        console.log("Bye! (CTRL + C to quit");
+        return;
+    }
+    startQuestions();
+};
+const viewDepartments = () => {
+    departments = [];
+
+    db.query(`SELECT * FROM department`, (err, row) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        for (let i = 0; i < row.length; i++){
+            departments.push(row[i]);
+        }
+        console.table('', departments);
+        console.log('Press arrow down to execute another action');
+    })
+};
+const viewRoles = () => {
+
+    roles = [];
+
+    db.query(`SELECT * FROM employeerole`, (err, row) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        for (let j = 0; j < row.length; j++) {
+            roles.push(row[j]);
+        }
+        console.table('', roles);
+        console.log('Press arrow down to execute another action');
+    })
+
+};
