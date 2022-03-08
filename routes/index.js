@@ -96,3 +96,112 @@ async function startQuestions() {
                     }
                 }
             },
+            {
+                type: 'input',
+                name: 'roleID',
+                message: "What is the employee's role id? (Required)",
+                validate: roleID => {
+                    if (roleID) {
+                        return true;
+                    } else {
+                        console.log("Please enter the role ID!")
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'managerName',
+                message: "What is the name of the Manager?",
+                validate: managerName => {
+                    if (managerName) {
+                        return true;
+                    } else {
+                        console.log("Please enter the name of the Manager")
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'departmentID',
+                message: "What is the department ID for this employee?",
+                validate: departmentID => {
+                    if (departmentID) {
+                        return true;
+                    } else {
+                        console.log("Please enter a department ID!")
+                    }
+                }
+            }
+        ])
+        if (newEmployee) {
+
+            employees.push(newEmployee);
+            
+        }
+
+        addEmployee();
+
+    }
+    if (question.trackerAction === 'Add a Department') {
+        newDepartment = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'newDepartment',
+                message: "What is the Department name? (Required)",
+                validate: newDepartment => {
+                    if (newDepartment) {
+                        return true;
+                    } else {
+                        console.log("Please enter the department name")
+                    }
+                }
+            }
+        ])
+        if (newDepartment) {
+
+            departments.push(newDepartment);
+            
+        }
+        addDepartment();
+       
+    }
+    if (question.trackerAction === "Update employee's role") {
+        
+        updatedEmployeeRole = await inquirer.prompt([ 
+            {
+                type: 'input',
+                name: 'employeeFirstName',
+                message: "Please enter the first name of the employee you're updating",
+                validate: employeeFirstName => {
+                    if (employeeFirstName) {
+                        return true;
+                    } else {
+                        console.log("Please enter the employee's first name!")
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'employeeLastName',
+                message: "Please enter the last name of the employee you're updating",
+                validate: employeeLastName => {
+                    if (employeeLastName) {
+                        return true;
+                    } else {
+                        console.log("Please enter the employee's last name!")
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'newRoleID',
+                message: "Enter the new role id for this employee",
+                validate: newRoleID => {
+                    if (newRoleID) {
+                        return true;
+                    } else {
+                        console.log("Please enter the new role ID for this employee!")
+                    }
+                }
+            }
+        ])
