@@ -252,3 +252,38 @@ const viewRoles = () => {
     })
 
 };
+const viewEmployees = () => {
+    employees = [];
+    db.query(`SELECT employee.*, department.department_name AS department, employeerole.title AS role
+    from employee
+    LEFT JOIN department
+    ON employee.department_id = department.id
+    LEFT JOIN employeerole
+    ON employee.role_id = employeerole.id`, (err, row) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        for (let k = 0; k < row.length; k++) {
+            employees.push(row[k]);
+        }
+        
+        console.table('', employees);
+        console.log('Press arrow down to execute another action');
+    })
+};
+const addRole = () => {
+
+
+    const params = [roles[roles.length-1].newRoleTitle, roles[roles.length-1].newRoleSalary, roles[roles.length-1].departmentID];
+
+    db.query(`INSERT INTO employeerole (title, salary, department_id)
+    VALUES (?, ?, ?)`, params, (err, res) => {
+        if (err) {
+
+            return;
+        }
+
+    });
+    console.log('Role is now added!')
+    console.log('Press arrow down to execute another action');
