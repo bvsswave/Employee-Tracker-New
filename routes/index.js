@@ -287,3 +287,58 @@ const addRole = () => {
     });
     console.log('Role is now added!')
     console.log('Press arrow down to execute another action');
+};
+
+const addEmployee = () => {
+
+    const params = [employees[employees.length-1].newEmployeeFirstName, employees[employees.length-1].newEmployeeLastName, employees[employees.length-1].roleID, employees[employees.length-1].managerName, employees[employees.length-1].departmentID];
+    
+    db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_name, department_id)
+    VALUES (?, ?, ?, ?, ?)`, params, (err, res) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+
+
+        console.log('', "The employee is now added")
+        console.log("Press arrow down to execute another action");
+
+    });
+
+};
+const addDepartment = () => {
+    const params = [departments[departments.length-1].newDepartment];
+    
+    db.query(`INSERT INTO department (department_name)
+    VALUES (?)`, params, (err, res) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+
+        console.log("The department is now added")
+        console.log("Press arrow down to execute another action");
+    });
+};
+
+const updateEmployeeRole = () => {
+    
+    const params = [updatedRole[0].newRoleID, updatedRole[0].employeeFirstName, updatedRole[0].employeeLastName];
+   
+    db.query(`UPDATE employee set role_id = ?
+    WHERE first_name = ? and last_name = ?`, params, (err, res) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log("Employee is now updated")
+        console.log("Press arrow down to execute another action");
+    });
+
+
+}
+
+startQuestions();
+
+
