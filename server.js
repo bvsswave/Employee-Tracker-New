@@ -1,5 +1,4 @@
-
-const inputCheck = require('.utils/inputCheck');
+const inputCheck = require('./utils/inputCheck');
 const db = require('./db/connection');
 const express = require('express');
 const app = express();
