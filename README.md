@@ -1,8 +1,10 @@
 # Employee-Tracker-New
 
-## Description
+## GITHUB: https://github.com/bvsswave/Employee-Tracker-New.git
+## DEMO: https://drive.google.com/file/d/1ZunEzJr9b0QHkHsVBJ93iaSjDy-PAqPD/view?usp=sharing
 
 ## User Story
+
 ```
 AS A business owner
 I WANT to be able to view and manage the departments, roles, and employees in my company
