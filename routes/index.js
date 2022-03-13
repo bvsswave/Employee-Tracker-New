@@ -98,6 +98,18 @@ async function startQuestions() {
             },
             {
                 type: 'input',
+                name: 'newEmployeeLastName',
+                message: "What is the employee's last name? (Required)",
+                validate: newEmployeeLastName => {
+                    if (newEmployeeLastName) {
+                        return true;
+                    } else {
+                        console.log("Please enter the employee's last name!")
+                    }
+                }
+            },
+            {
+                type: 'input',
                 name: 'roleID',
                 message: "What is the employee's role id? (Required)",
                 validate: roleID => {
